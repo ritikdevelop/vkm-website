@@ -1,9 +1,22 @@
 "use client";
-import { Button } from "@nextui-org/button";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 function Hero() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Form submitted:", formData);
+  };
   return (
     <div>
       <div className="relative min-h-screen">
@@ -15,20 +28,20 @@ function Hero() {
           priority
         />
       </div>
-      <div className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <figure className="text-center">
-          <blockquote className="mb-4">
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-amber-500">
-              "NOTHING WORKS BEYOND SURRENDERING"
-            </p>
-          </blockquote>
-          <figcaption className="text-lg md:text-xl text-purple-700">
-            -MASTER VANI KABIR
-          </figcaption>
-        </figure>
+      <div className="bg-blue-50 py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <figure className="text-center">
+            <blockquote className="mb-4">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-amber-500">
+                "NOTHING WORKS BEYOND SURRENDERING"
+              </p>
+            </blockquote>
+            <figcaption className="text-lg md:text-xl text-purple-700">
+              -MASTER VANI KABIR
+            </figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
       <div className="justify-center flex font-bold text-2xl mt-5">
         <h2>Our Products</h2>
       </div>
@@ -74,7 +87,123 @@ function Hero() {
           </div>
         </div>
       </div>
-      
+
+      <div className="bg-blue-50 py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+            <p className="text-medium md:text-xl leading-relaxed">
+              When a single soul heals, they break the generational trauma
+              attached and save generations to come. We aim to bring this change
+              along with the awareness surrounding it, starting with 5M people.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white py-8 md:py-18">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            WHAT WE DO
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl font-semibold text-amber-500">
+                HEALING IS OUR LANGUAGE
+              </h3>
+
+              <blockquote className="text-lg md:text-medium">
+                "Healing is never for the weak, it's for the brave-hearted. When
+                healing occurs, it's not a solo process; you heal the whole
+                lineage with you."
+                <footer className="mt-2 font-bold">- Master Vani Kabir</footer>
+              </blockquote>
+
+              <p className="text-base md:text-lg leading-relaxed">
+                During healing, surrender is key. It starts with cellular
+                reprogramming, as each cell in our body contains DNA, carrying
+                embedded information. As reprogramming unfolds, our body learns
+                the language of restoration and renewal. Healing releases past
+                traumas, alleviates present distress, and paves the way for a
+                happier, more vibrant future.
+              </p>
+            </div>
+
+            <div className="relative aspect-square">
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/hands.png"
+                  alt="Hands with rings showing healing gestures"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Input form Section */}
+      <div className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-amber-500 text-center mb-8">
+              Amalvee SoulStar! Start Spritual With Us!
+            </h2>
+
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 md:space-y-0 md:flex md:gap-4 items-end"
+            >
+              <div className="grid md:grid-cols-2 gap-4 flex-1">
+                <Input
+                  type="text"
+                  placeholder="First Name"
+                  className="border-amber-500 focus:ring-amber-500"
+                  value={formData.firstName}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      firstName: e.target.value,
+                    }))
+                  }
+                  required
+                />
+                <Input
+                  type="text"
+                  placeholder="Last Name"
+                  className="border-amber-500 focus:ring-amber-500"
+                  value={formData.lastName}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      lastName: e.target.value,
+                    }))
+                  }
+                  required
+                />
+              </div>
+              <Input
+                type="email"
+                placeholder="Email Address"
+                className="border-amber-500 focus:ring-amber-500 flex-1"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, email: e.target.value }))
+                }
+                required
+              />
+              <Button
+                type="submit"
+                className="w-full md:w-auto bg-amber-500 hover:bg-amber-500 text-white"
+              >
+                Sign Up
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
