@@ -17,6 +17,31 @@ function Hero() {
     // Handle form submission here
     console.log("Form submitted:", formData);
   };
+
+  const images = [
+    {
+      src: "/images/Mission2.png",
+      alt: "Person meditating outdoors in white clothing",
+      className: "rounded-lg",
+      width: 400,
+      height: 600,
+    },
+    {
+      src: "/images/stonehands.png",
+      alt: "Hands holding healing crystals",
+      className: "rounded-lg",
+      width: 400,
+      height: 500,
+    },
+    {
+      src: "/images/mission1.png",
+      alt: "Person in white traditional clothing meditating indoors",
+      className: "rounded-lg",
+      width: 400,
+      height: 600,
+    },
+  ];
+
   return (
     <div>
       <div className="relative min-h-screen">
@@ -101,13 +126,38 @@ function Hero() {
         </div>
       </div>
 
-      <div className="bg-white py-8 md:py-18">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <section className="w-full py-10 bg-white">
+      <div className="container px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative aspect-[3/4] overflow-hidden group"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className={`object-cover transition-transform duration-300 group-hover:scale-105 ${image.className}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <h2 className="container mx-auto px-4 text-3xl md:text-4xl font-bold text-center mb-15 py-5">
             WHAT WE DO
           </h2>
+    </section>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+      <div className="py-5 md:py-10">
+        <div className="container mx-auto px-4">
+          {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            WHAT WE DO
+          </h2> */}
+
+          <div className="bg-white grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-semibold text-amber-500">
                 HEALING IS OUR LANGUAGE
