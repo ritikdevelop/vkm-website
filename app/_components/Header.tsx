@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import path from "path";
 import Link from "next/link";
-import { Button } from "@nextui-org/button";
+
 
 function Header() {
   const MenuList = [
@@ -57,7 +57,7 @@ function Header() {
       </NavbarContent>
       <NavbarContent justify="center" className="hidden sm:flex">
         {MenuList.map((item, index) => (
-          <NavbarItem className="text-medium text-g font-medium hover:text-purple-400 mx-2">
+          <NavbarItem key={item.path} className="text-medium text-g font-medium hover:text-purple-400 mx-2">
             <Link href={item.path}>{item.name}</Link>
           </NavbarItem>
         ))}

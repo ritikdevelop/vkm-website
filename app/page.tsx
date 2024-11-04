@@ -7,7 +7,7 @@ import Footer from "./_components/Footer";
 export default function Home() {
   return (
     <div>
-      {/*//! Header Section */}
+      {/* //! Header Section */}
       <Header />
 
       {/*//! Hero Section */}
