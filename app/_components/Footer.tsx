@@ -79,7 +79,7 @@ function Footer() {
                   <li className="transition-transform hover:scale-105">
                     <Link
                       href={
-                        "https://apps.apple.com/in/app/vani-kabir-studio/id1641843590"
+                        "https://play.google.com/store/apps/details?id=com.soulstudiobyvanikabir&pli=1"
                       }
                     >
                       <Image
@@ -93,7 +93,7 @@ function Footer() {
                   <li className="transition-transform hover:scale-105">
                     <Link
                       href={
-                        "https://play.google.com/store/apps/details?id=com.soulstudiobyvanikabir&pli=1"
+                        "https://apps.apple.com/in/app/vani-kabir-studio/id1641843590"
                       }
                     >
                       <Image
