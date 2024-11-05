@@ -15,17 +15,17 @@ function Footer() {
             <h2 className="font-semibold text-lg mb-4">INFO</h2>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="hover:text-purple-700">
+                <Link href="/about-us" className="hover:text-purple-700">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-purple-700">
+                <Link href="/contact-us" className="hover:text-purple-700">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/story" className="hover:text-purple-700">
+                <Link href="/our-story" className="hover:text-purple-700">
                   Our Story
                 </Link>
               </li>
@@ -37,12 +37,12 @@ function Footer() {
             <h2 className="font-semibold text-lg mb-4">TALENT</h2>
             <ul className="space-y-2">
               <li>
-                <Link href="/join" className="hover:text-purple-700">
+                <Link href="/career" className="hover:text-purple-700">
                   Join Us
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="hover:text-purple-700">
+                <Link href="/talent" className="hover:text-purple-700">
                   Team
                 </Link>
               </li>
